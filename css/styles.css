@@ -220,15 +220,20 @@ margin-right: 50px;
     border-radius: 4px;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-close {
+.close {
+    display: flex;
     position: absolute;
-    background-size: contain;
-    width: 30px;
-    height: 30px;
-    padding: 9px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--hero-text-color);
     top: 8px;
     right: 8px;
-    border: none;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+   border-radius: 50%;
+   cursor: pointer;
+   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-portfolio {
     display: inline-block;
@@ -240,6 +245,159 @@ margin-right: 50px;
     background-color: #F5F4FA;
     border-radius: 4px;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form {
+    padding: 40px;
+}
+.formTitle {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--title-text-color);
+}
+.form-field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-field:focus-within .form-icon {
+    fill: var(--accent-color);
+}
+.form-label {
+    margin-bottom: 4px;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: var(--main-text-color);
+}
+.form-input {
+    height: 40px;
+    padding: 11px 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-input:focus {
+    outline: 0;
+    border: 1px solid var(--accent-color);
+}
+.form-icon {
+    display: inline-block;
+    position: absolute;
+    left: 15px;
+    bottom: 14px;
+}
+.form-comment {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.formInput {
+    margin: 0;
+    width: 358px;
+    padding: 15px 16px;
+    color: var(--hero-text-color);
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+    background-color: rgba(33, 150, 243, 0);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+.formInput::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+}
+.textarea:focus {
+    outline: 0;
+    border: 1px solid var(--accent);
+}
+.textarea {
+   width: 100%;
+   height: 120px;
+   padding: 12px 16px; 
+   border: 1px solid rgba(33, 33, 33, 0.2);
+   border-radius: 4px;
+   resize: none;
+   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.textarea::placeholder {
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+}
+.policyForm {
+    display: block;
+    text-align: center;
+    margin-bottom: 30px;
+ }
+ .field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.field-label {
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: var(--main-text-color);
+}
+.label-accent {
+    color: var(--accent-color);
+}
+.checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+.checkbox-icon::before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 15px;
+    margin-right: 7px;
+    border: 2px solid var(--title-text-color);
+    border-radius: 4px;
+}
+.checkbox:checked + .checkbox-icon::before {
+    border-color: var(--accent-color);
+    background-color: var(--accent-color);
+    background-image: url(../images/check.svg);
+    background-size: contain;
+    background-origin: border-box;
+}
+.sendButton {
+    margin-top: 30px;
+    padding: 10px 55px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.8;
+    letter-spacing: 0.06em;
+    border-radius: 4px;
+    border-color: transparent;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    color: var(--hero-text-color);
+    background: var(--accent-color);
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.sendButton:hover,
+.sendButton:focus {
+    background-color: #188CE8;
 }
 .services :not(:last-child) {
     margin-right: 8px;
@@ -431,6 +589,7 @@ footer {
 }
 .footer-content {
     display: flex;
+    align-items: baseline;
 }
 .social-footer {
     display: flex;
@@ -438,12 +597,21 @@ footer {
     justify-content:left;
     align-items: center;
 }
-.footer-content .footer-block + .footer-block {
+.footer-adres {
+   /* width: 231px; */
+   display: block;
+}
+.footer-block {
+    width: 206px;
     margin-left: 70px;
 }
-.social-title-footer {
-    display: inline-block;
+.subscription {
+    margin-left: 93px;
+}
+.title-footer-block {
+     display: block;
      margin-top: 12px;
+     margin-bottom: 20px;
      font-weight: 700;
      font-size: 14px;
      line-height: 1.14;
@@ -460,20 +628,58 @@ footer {
     text-decoration: none;
 }
 .adres {
+    width: 231px;
     font-size: 14px;
     line-height: 1.71;
     color: rgba(255, 255, 255, 0.6);
     font-style: normal;
 }
 .location {
-    margin-bottom: 9px;
+    display: inline-block;
     font-size: 14px;
     line-height: 1.71;
     color: #FFFFFF;
     font-style: normal;
     text-decoration: none;
 }
+.Input {
+    margin: 0;
+    width: 358px;
+    padding: 15px 16px;
+    color: var(--hero-text-color);
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+    background-color: rgba(33, 150, 243, 0);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+.subscription-form {
+    display: flex;
+}
+.sign-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 0;
+    margin-left: 12px;
+    width: 200px;
 
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.06em;
+    color: var(--hero-text-color);
+    background-color: var(--accent-color);
+
+    cursor: pointer;
+}
+.signIcon {
+    margin-left: 10px;
+    /* background-size: contain; */
+}
 .list {
     list-style: none;
 }
