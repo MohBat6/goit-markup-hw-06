@@ -352,6 +352,7 @@ margin-right: 50px;
     color: var(--main-text-color);
 }
 .label-accent {
+    display: inline-block;
     color: var(--accent-color);
 }
 .checkbox {
